@@ -1,7 +1,0 @@
-data<-read.table("household_power_consumption.txt",nrow=2880,skip=66637,sep=";")
-png(filename="plot3.png",width=480,height=480)
-combine<-c(as.POSIXct(paste(data$V1, data$V2), format = "%d/%m/%Y %T"))
-plot(combine,data$V7,type="l",xlab="",ylab="Energy sub metering")
-lines(combine,data$V8,col="red")
-lines(combine,data$V9,col="blue")
-legend("topright", c("Sub_metering_1 ", "Sub_metering_2 ", "Sub_metering_3 "), cex=0.4, lty=1:1, col=c("black", "red", "blue") )
